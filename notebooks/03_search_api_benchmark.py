@@ -30,8 +30,9 @@ import httpx
 
 # %%
 ROOT = Path(_setup.__file__).resolve().parent.parent
+import sys
 proc = subprocess.Popen(
-    ["uvicorn", "app.main:app", "--port", "8000", "--log-level", "warning"],
+    [sys.executable, "-m", "uvicorn", "app.main:app", "--port", "8000", "--log-level", "warning"],
     cwd=str(ROOT),
 )
 
